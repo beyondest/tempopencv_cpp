@@ -1,4 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
+project(cv)
+
 find_package(OpenCV REQUIRED)
 
 set(myapp_name myapp) #myapp_name must match program name in launch.json and code-runner settings.json
@@ -7,7 +9,6 @@ set(compile_mode 1) #0 for both lib and app, 1 for app, 2 for lib
 set(ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set(EXECUTABLE_OUTPUT_PATH ${ROOT_DIR}/build/exe)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${ROOT_DIR}/lib)
-project(cv)
 
 set(libsrc_list)
 set(src_list)
@@ -36,7 +37,7 @@ include_directories(${inc_list})
 add_compile_options("-g")
 
 message(STATUS "*************************************")
-message(STATUS "opencvlib_list:"${OpenCV_LIBS})
+message(STATUS "opencvlib_list:" ${OpenCV_LIBS})
 message(STATUS "*************************************")
 message(STATUS "src_list:" ${src_list})
 message(STATUS "*************************************")
